@@ -108,3 +108,6 @@ config.json
 
 # JavaScripit files
 bin/
+
+# VSCode files
+.vscode/

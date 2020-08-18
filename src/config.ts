@@ -4,8 +4,7 @@ export interface IConfig {
     token: string
     prefix: string
     admin: string[]
-    group: string[]
-    suRoles: string[]
+    groupChannel: string[]
 }
 
 export interface ICommand {
@@ -13,6 +12,7 @@ export interface ICommand {
     aliases?: string[]
     sudo?: boolean
     guildOnly?: boolean
+    groupOnly?: boolean
     args?: boolean
     usage?: string
     execute(message: Message, args: string[]): void

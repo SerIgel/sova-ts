@@ -48,6 +48,10 @@ client.on("message", async message => {
     if (command.guildOnly && message.channel.type !== 'text') {
         return message.reply('I can\'t execute that command inside DMs!');
     }
+
+    // Channel check
+    if (command.groupOnly && cfg.groupChannel.includes(message.channel.id)) { return message.delete(); }
+
     // Args check
     if (command.args && !args.length) {
         let reply = `You didn't provide any arguments, ${message.author}!`;

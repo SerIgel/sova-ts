@@ -1,6 +1,13 @@
 {
     "commands": [
         "ping",
-        "clear"
+        "clear",
+        "message",
+        "add",
+        "group",
+        "delete",
+        "me",
+        "reset",
+        "game"
     ]
 }
