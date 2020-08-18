@@ -107,4 +107,4 @@ dist
 config.json
 
 # JavaScripit files
-./src/*.js
+bin/
