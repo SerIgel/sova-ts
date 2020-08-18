@@ -23,6 +23,7 @@ And now you are ready to run your bot with `npm start`
   "groupChannel": ["id of channels to get group in"]
 }
 ```
-
+If you don't know how to create your bot, you can check out [this link](https://www.digitaltrends.com/gaming/how-to-make-a-discord-bot/) and make steps from 2 to 4.  
+Also you must make your bot administrtor (you can do this because you must be admin to add bots to server)
 ## SU commands:
 Commands with `sudo: true` flag in it can only be executed by server admin or the man you specified in `config.json`
