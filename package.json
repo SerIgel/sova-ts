@@ -1,0 +1,28 @@
+{
+  "name": "sova-ts",
+  "version": "0.1.0",
+  "description": "Dicsord bot for Sovyonok distant school",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/tsc",
+    "start": "node bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SerIgel/sova-ts.git"
+  },
+  "author": "SerIgel#1337",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SerIgel/sova-ts/issues"
+  },
+  "homepage": "https://github.com/SerIgel/sova-ts#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  },
+  "devDependencies": {
+    "@tsconfig/node12": "^1.0.7",
+    "@types/node": "^14.6.0"
+  }
+}

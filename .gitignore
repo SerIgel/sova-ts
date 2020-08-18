@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Config file with bot token
+config.json
+
+# JavaScripit files
+bin/
