@@ -1,6 +1,7 @@
 {
     "commands": [
         "ping",
-        "clear"
+        "clear",
+        "message"
     ]
 }
