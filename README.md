@@ -9,17 +9,20 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/serigel/sova-ts/master/ins
 git clone https://github.com/SerIgel/sova-ts.git
 cd sova_bot
 npm install
+npm run build
 touch config.json
 ```
-Then open `config.json` in any editor and set your config as shown below  
-Afterwards run `npm run build`
+Then open `config.json` in any editor and set your config as shown below    
 And now you are ready to run your bot with `npm start`  
 ### `config.json` structure:
 ```json
 {
   "prefix": "your prefix for bot commands",
   "token": "your bot token",
-  "admin": ["id of the man who can add new groups"],
-  "group_channel": ["id of channels to get group"]
+  "admin": ["id of users who can use sudo commands"],
+  "groupChannel": ["id of channels to get group in"]
 }
 ```
+
+## SU commands:
+Commands with `sudo: true` flag in it can only be executed by server admin or the man you specified in `config.json`

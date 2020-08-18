@@ -5,6 +5,7 @@ export interface IConfig {
     prefix: string
     admin: string[]
     group: string[]
+    suRoles: string[]
 }
 
 export interface ICommand {
