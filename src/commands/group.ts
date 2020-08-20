@@ -1,6 +1,5 @@
 import { ICommand } from "../config";
 import { Message } from "discord.js";
-import { isNullOrUndefined } from "util";
 
 export default class Group implements ICommand {
     public name = "group";
@@ -20,7 +19,7 @@ export default class Group implements ICommand {
         if (!role) {
             return message.reply(`такой группы не существует`)
         }
-        if (message.member!.roles.cache.find(r => !isNullOrUndefined(r.name.match(/^\d/)))) {
+        if (message.member!.roles.cache.find(r => !(r.name.match(/^\d/) === null))) {
             return message.reply("у вас не может быть более одной роли группы")
         }
         if (action === "add")
