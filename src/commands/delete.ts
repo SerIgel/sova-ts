@@ -1,5 +1,5 @@
 import { ICommand } from "../config";
-import { Message, DiscordAPIError, CategoryChannel } from "discord.js";
+import { Message, CategoryChannel } from "discord.js";
 
 export default class DeleteChannels implements ICommand {
     public name = "delete";

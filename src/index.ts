@@ -1,8 +1,7 @@
 import * as Discord from 'discord.js'
 const client = new Discord.Client();
 import { IConfig, ICommand } from './config'
-import { isNullOrUndefined } from 'util';
-import { userInfo } from 'os';
+
 
 const cfg = require('../config.json') as IConfig
 
@@ -38,7 +37,7 @@ client.on("message", async message => {
     if (!message.content.startsWith(cfg.prefix) || message.author.bot) return;
     
     const args = message.content.slice(cfg.prefix.length).split(/ +/);
-    if (isNullOrUndefined(args)) { return }
+    if (args === null) { return }
     const commandName = args.shift()!.toLowerCase();
 
     const command = commands.get(commandName)
