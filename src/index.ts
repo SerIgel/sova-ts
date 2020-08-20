@@ -2,7 +2,6 @@ import * as Discord from 'discord.js'
 const client = new Discord.Client();
 import { IConfig, ICommand } from './config'
 import { isNullOrUndefined } from 'util';
-import { userInfo } from 'os';
 
 const cfg = require('../config.json') as IConfig
 
