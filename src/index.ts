@@ -37,7 +37,7 @@ client.on("message", async message => {
     if (!message.content.startsWith(cfg.prefix) || message.author.bot) return;
     
     const args = message.content.slice(cfg.prefix.length).split(/ +/);
-    if (args === null) { return }
+    if (args == null) { return }
     const commandName = args.shift()!.toLowerCase();
 
     const command = commands.get(commandName)
