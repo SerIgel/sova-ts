@@ -1,4 +1,5 @@
-# sova_bot
+# sova-ts
+TypeScript version of [sova_bot](https://github.com/serigel/sova_bot) (deprecated)
 ## Setup (node v12.0.0 or newer required):
 ### Automatic:
 ```bash
