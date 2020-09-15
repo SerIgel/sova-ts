@@ -72,6 +72,9 @@ client.on("message", async message => {
     try {
 		command.execute(message, args);
 	} catch (error) {
+        if (error.message === "Incorrect usage") {
+            message.reply(`the proper usage would be: \`${cfg.prefix}${command.name} ${command.usage}\``)
+        }
 		console.error(error);
 		message.reply('there was an error trying to execute that command!');
 	}

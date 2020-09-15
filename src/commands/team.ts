@@ -28,7 +28,7 @@ export default class Team implements ICommand {
             case "rm":
                 message.member!.roles.remove(role)
             default:
-                break;
+                throw new Error("Incorrect usage");
         }
  
     }

@@ -8,6 +8,7 @@
         "delete",
         "me",
         "reset",
-        "game"
+        "game",
+        "stuff"
     ]
 }
