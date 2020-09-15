@@ -107,7 +107,7 @@ dist
 config.json
 
 # JavaScripit files
-bin/
+out/
 
 # VSCode files
 .vscode/
