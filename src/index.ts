@@ -49,7 +49,7 @@ client.on("message", async message => {
     }
 
     // Channel check
-    if (command.groupOnly && cfg.groupChannel.includes(message.channel.id)) { return message.delete(); }
+    if (command.groupOnly && !cfg.groupChannel.includes(message.channel.id)) { return message.delete(); }
 
     // Args check
     if (command.args && !args.length) {
