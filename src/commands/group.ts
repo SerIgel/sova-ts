@@ -12,20 +12,22 @@ export default class Group implements ICommand {
     public async execute(message: Message, args: string[]) {
         if (args.length !== 2) { return message.delete(); }
         if (!args[1].match(/^\d/)) { return message.delete(); }
-        
+
         let action = args.shift();
-        if (action == null) {throw new Error("Incorrect usage");}
+        if (action == null) { return message.reply("Incorrect usage"); }
         let role = message.guild!.roles.cache.find(r => r.name === args.join(' '));
         if (!role) {
             return message.reply(`такой группы не существует`)
         }
-        if (message.member!.roles.cache.find(r => !(r.name.match(/^\d/) == null))) {
-            return message.reply("у вас не может быть более одной роли группы")
-        }
-        if (["add", "assign"].includes(action))
+        if (["get", "assign"].includes(action)) {
+            if (message.member!.roles.cache.find(r => !(r.name.match(/^\d/) == null))) {
+                return message.reply("у вас не может быть более одной роли группы")
+            }
             message.member!.roles.add(role)
-        else if (["add", "assign"].includes(action))
+        }
+        else if (["rm", "remove"].includes(action)) {
             message.member!.roles.remove(role)
+        }
 
         role = message.guild!.roles.cache.find(r => r.name === "Ученик")
         if (!role) {

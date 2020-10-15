@@ -1,3 +1,4 @@
+import { error } from 'console';
 import * as Discord from 'discord.js'
 const client = new Discord.Client();
 import { IConfig, ICommand } from './config'
@@ -29,6 +30,7 @@ client.login(cfg.token)
     .catch(error => { console.log(`Can't because of ${error}`) })
 
 client.on("ready", async () => {
+    console.log(cfg)
     console.log(`Logged in as ${client.user!.tag}`)
     readCommands(commands)
 })
@@ -49,7 +51,7 @@ client.on("message", async message => {
     }
 
     // Channel check
-    if (command.groupOnly && !cfg.groupChannel.includes(message.channel.id)) { return message.delete(); }
+    if (command.groupOnly && !(cfg.groupChannel.includes(message.channel.id))) { return message.delete(); }
 
     // Args check
     if (command.args && !args.length) {
@@ -67,7 +69,6 @@ client.on("message", async message => {
             return message.reply("you need to be a superuser to use this command");
         }
     }
-
 
     try {
 		command.execute(message, args);
