@@ -19,11 +19,12 @@ export default class Team implements ICommand {
         if (!role) {
             return message.reply(`такой команды не существует`)
         }
-        if (message.member!.roles.cache.find(r => r.name.includes("Команда"))) {
-            return message.reply("у вас не может быть более одной роли команды")
-        }
+
         switch (action) {
             case "get":
+                if (message.member!.roles.cache.find(r => r.name.includes("Команда"))) {
+                    return message.reply("у вас не может быть более одной роли команды")
+                }
                 message.member!.roles.add(role)
                 break;
             case "rm":
