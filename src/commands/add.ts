@@ -8,10 +8,10 @@ export default class Add implements ICommand {
     public async execute(message: Message, args: string[]) {
         let role;
         let cat;
-        switch (args[0]) {
+        let action = args.shift();
+        switch (action) {
             case "group":
-                if (!args[1]) { return message.reply("укажите имя группы") }
-                args.shift();
+                if (!args[0]) { return message.reply("укажите имя группы") }
                 if (!args[0].match(/^\d/)) { return message.reply("имя группы должно начинаться с цифры") }
                 role = await message.guild!.roles.create({
                     data: {
@@ -54,14 +54,14 @@ export default class Add implements ICommand {
                 break;
                 
             case "team":
-                if (!args[1]) { return message.reply("укажите номер команды") }
+                if (!args[0]) { return message.reply("укажите название команды") }
                 role = await message.guild!.roles.create({
                     data: {
-                        name: `Команда ${args[1]}`
+                        name: args.join(' ')
                     },
                 })
                 role.setPosition(1, { relative: true })
-                cat = await message.guild!.channels.create(`Команда ${args[1]}`, {
+                cat = await message.guild!.channels.create(`${args.join(' ')}`, {
                     type: "category"
                 })
                 await cat.updateOverwrite(cat.guild.roles.everyone, { VIEW_CHANNEL: false });

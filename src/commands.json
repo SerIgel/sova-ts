@@ -10,6 +10,7 @@
         "reset",
         "game",
         "stuff",
-        "team"
+        "team",
+        "list"
     ]
 }
