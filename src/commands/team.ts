@@ -22,9 +22,6 @@ export default class Team implements ICommand {
                     return message.reply(`такой команды не существует`)
                 }
                 if (role.permissions.has("ADMINISTRATOR")) { return message.reply("don't."); }
-                if (message.member!.roles.cache.find(r => !r.name.includes("Ученик"))) {
-                    return message.reply("у вас не может быть более одной роли команды")
-                }
                 message.member!.roles.add(role)
                 break;
             case "rm":
