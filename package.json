@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "latest": "node out/index.js",
-    "start": "tsc && node out/index.js"
+    "start": "tsc --resolveJsonModule && node out/index.js"
   },
   "repository": {
     "type": "git",
